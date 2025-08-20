@@ -9,6 +9,20 @@
     <script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
+    <header class="mobile-header">
+    <div class="mobile-header__content">
+        <button id="sidebar-toggle" class="mobile-menu-btn" aria-label="Toggle menu">
+            <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <h1 class="mobile-header__title">FinanceManager</h1>
+    </div>
+    </header>
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
     <div id="app" class="flex h-screen bg-background">
         <!-- Sidebar -->
         <aside id="sidebar" class="w-64 bg-surface border-r border-border transition-transform duration-300 ease-standard">
