@@ -1,6 +1,22 @@
 // Personal Finance Manager - JavaScript Application
 
 class FinanceApp {
+    setupMobileMenu() {
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+    
+        if (sidebarToggle) {
+            sidebarToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.toggleSidebar();
+            });
+        }
+    
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => this.closeSidebar());
+        }
+    }
+
     constructor() {
         this.currentPage = 'dashboard';
         this.editingTransaction = null;
@@ -78,6 +94,7 @@ class FinanceApp {
     init() {
         this.loadData();
         this.setupEventListeners();
+        this.setupMobileMenu();
         this.setupTheme();
         this.renderCurrentPage();
         this.updateDashboard();
